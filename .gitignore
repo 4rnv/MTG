@@ -1,0 +1,6 @@
+*.txt
+*.json
+*.pkl
+hmmenv/
+rawdata/
+__pycache__/
