@@ -80,7 +80,7 @@ class MarkovModel():
         print(f"{len(text)} characters")
         timestamp = int(time.time())
         with open(f"outputs/generated_text{timestamp}.txt", "w") as f:
-            f.write(text)
+            f.write('. '.join(sentence.strip().capitalize() for sentence in text.split('. ')))
         print(f"Saved to generated_text{timestamp}.txt")
         return text
 
@@ -131,5 +131,5 @@ if __name__=="__main__":
     training_data = get_data(CORPUS)
     model.train(training_data)
     model.display_matrix()
-    model.generate(4000, test_input, 0.6, 0.5)
+    model.generate(4000, test_input, 0.6, 0.8)
     #model.save_models(SAVE_PATH)
